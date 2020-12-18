@@ -32,7 +32,7 @@ export default function Search() {
       }
 
       <main className="container py-6">
-        <div class="mb-4">
+        <div className="mb-4">
           <form onSubmit={onSubmit}>
             <input
               value={name}
