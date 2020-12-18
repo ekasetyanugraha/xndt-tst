@@ -30,15 +30,6 @@ export default function Home() {
 
       <main className="container py-6">
         {
-          !!universities.length &&
-          <div className="mb-4">
-            <Pagination
-              onClickPageNum={onClickPageNum}
-            />
-          </div>
-        }
-
-        {
           universities.map(university => <CardUniversity key={university.name} university={university} />)
         }
 
