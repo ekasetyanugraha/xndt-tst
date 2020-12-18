@@ -7,7 +7,11 @@ import Pagination from '../components/Pagination';
 import useUniversity from '../hooks/university';
 
 export default function Home() {
-  const { getUniversities, universities } = useUniversity();
+  const {
+    isLoading,
+    getUniversities,
+    universities,
+  } = useUniversity();
 
   useEffect(() => {
     getUniversities();
@@ -35,6 +39,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {
+        isLoading && <progress className="progress is-small is-primary is-radiusless" max="100"></progress>
+      }
 
       <main className="container py-6">
         <div className="mb-4">
