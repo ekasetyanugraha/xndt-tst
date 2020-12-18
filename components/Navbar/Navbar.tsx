@@ -11,7 +11,7 @@ export default function Navbar() {
 
       <div className="navbar-menu container">
         <div className="navbar-start">
-          <a className="navbar-item">
+          <a href="/" className="navbar-item">
             Home
           </a>
 
