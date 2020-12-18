@@ -8,7 +8,6 @@ const handleGet = (req: NextApiRequest, res: NextApiResponse) => {
   const {
     limit = 10,
     offset = 0,
-    country = '',
     name = '',
   } = query;
   const numLimit = Number(limit);
@@ -16,8 +15,7 @@ const handleGet = (req: NextApiRequest, res: NextApiResponse) => {
 
   const pageData: University[] =
     data
-      .filter(university => country ? university.alpha_two_code === country : true)
-      .filter(university => university.name.includes(name))
+      .filter(university => university.name.includes(name as string))
       .slice(numOffset, numLimit + numOffset);
 
   res.status(200).json(pageData);
