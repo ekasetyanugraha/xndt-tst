@@ -29,19 +29,27 @@ export default function Home() {
       }
 
       <main className="container py-6">
-        <div className="mb-4">
-          <Pagination
-            onClickPageNum={onClickPageNum}
-          />
-        </div>
+        {
+          !!universities.length &&
+          <div className="mb-4">
+            <Pagination
+              onClickPageNum={onClickPageNum}
+            />
+          </div>
+        }
+
         {
           universities.map(university => <CardUniversity key={university.name} university={university} />)
         }
-        <div className="mt-4">
-          <Pagination
-            onClickPageNum={onClickPageNum}
-          />
-        </div>
+
+        {
+          !!universities.length &&
+          <div className="mt-4">
+            <Pagination
+              onClickPageNum={onClickPageNum}
+            />
+          </div>
+        }
       </main>
 
     </PageContainer>
