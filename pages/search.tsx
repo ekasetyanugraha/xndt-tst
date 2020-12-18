@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PageContainer from '../components/PageContainer';
+import FormSearch from '../components/FormSearch';
 import CardUniversity from '../components/CardUniversity';
 import Pagination from '../components/Pagination';
 import useUniversity from '../hooks/university';
@@ -11,15 +12,7 @@ export default function Search() {
     universities,
   } = useUniversity();
 
-  const [name, setName] = useState('');
-
-  const onSubmit = e => {
-    e.preventDefault();
-
-    getUniversities({
-      name,
-    });
-  }
+  const onSubmitSearch = payload => getUniversities(payload);
 
   const onClickPageNum = (page) => {
     getUniversities({ limit: 10, offset: (page - 1) * 10 })
@@ -33,15 +26,7 @@ export default function Search() {
 
       <main className="container py-6">
         <div className="mb-4">
-          <form onSubmit={onSubmit}>
-            <input
-              value={name}
-              onInput={e => setName(e.target.value)}
-              className="input"
-              type="text"
-              placeholder="Search universities..."
-            />
-          </form>
+          <FormSearch onSubmit={onSubmitSearch} />
         </div>
 
         {
