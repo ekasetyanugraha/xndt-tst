@@ -12,7 +12,7 @@ export default function Search() {
     universities,
   } = useUniversity();
 
-  const onSubmitSearch = payload => getUniversities(payload);
+  const onSubmitSearch = (payload: UrlParamsUniversity) => getUniversities(payload);
 
   const onClickPageNum = (page) => {
     getUniversities({ limit: 10, offset: (page - 1) * 10 })

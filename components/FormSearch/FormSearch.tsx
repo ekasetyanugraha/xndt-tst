@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import UrlParamsUniversity from '../../interfaces/url-params-university';
 
 interface Props {
-  onSubmit: (payload) => {},
+  onSubmit: (payload: UrlParamsUniversity) => {},
 }
 
 export default function FormSearch({
