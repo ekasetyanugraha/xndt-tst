@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import PageContainer from 'components/PageContainer';
 import FormSearch from 'components/FormSearch';
 import CardUniversity from 'components/CardUniversity';
@@ -12,7 +13,12 @@ export default function Search() {
     universities,
   } = useUniversity();
 
-  const onSubmitSearch = (payload: UrlParamsUniversity) => getUniversities(payload);
+  const [submitted, setSubmitted] = useState(false);
+
+  const onSubmitSearch = (payload: UrlParamsUniversity) => {
+    setSubmitted(true);
+    getUniversities(payload);
+  };
 
   const onClickPageNum = (page) => {
     getUniversities({ limit: 10, offset: (page - 1) * 10 })
@@ -28,6 +34,14 @@ export default function Search() {
         <div className="mb-4">
           <FormSearch onSubmit={onSubmitSearch} />
         </div>
+        {
+          submitted &&
+          !isLoading &&
+          !universities.length &&
+          <div className="notification is-warning">
+            We can't find what you are searching for.
+          </div>
+        }
 
         {
           universities.map(university => <CardUniversity key={university.name} university={university} />)
