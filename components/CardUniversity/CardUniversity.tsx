@@ -15,7 +15,7 @@ export default function CardUniversity({
           <div className="media-content">
             <p className="title is-4">{university.name}</p>
             <p className="subtitle is-6">{getUnicodeFlagIcon(university.alpha_two_code)} {university.country}</p>
-            <a>{university.web_pages[0]}</a>
+            <span className="has-text-link">{university.web_pages[0]}</span>
           </div>
         </div>
       </div>
