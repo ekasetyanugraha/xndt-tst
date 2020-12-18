@@ -1,44 +1,54 @@
-import React from 'react';
-import Head from 'next/head';
+import { useEffect } from 'react';
+import Head from '../components/Head';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import API from '../services/universities'
+import CardUniversity from '../components/CardUniversity';
+import Pagination from '../components/Pagination';
+import useUniversity from '../hooks/university';
 
-export default class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    API.getUniversities();
-  }
+export default function Home() {
+  const { getUniversities, universities } = useUniversity();
 
-  render() {
-    return (
-      <div>
-        <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" integrity="sha512-ZRv40llEogRmoWgZwnsqke3HNzJ0kiI0+pcMgiz2bxO6Ew1DVBtWjVn0qjrXdT3+u+pSN36gLgmJiiQ3cQtyzA==" crossOrigin="anonymous" />
-        </Head>
+  useEffect(() => {
+    getUniversities();
+  }, []);
 
-        <Navbar />
+  return (
+    <div>
+      <Head />
 
-        <section className="hero is-primary">
-          <div className="hero-body">
-            <div className="container">
-              <h1 className="title">
-                Global Universities
-              </h1>
-              <h2 className="subtitle">
-                Primary subtitle
-              </h2>
-            </div>
+      <Navbar />
+
+      <section className="hero is-primary">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title">
+              Global Universities
+            </h1>
+            <h2 className="subtitle">
+              Primary subtitle
+            </h2>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <main className="container py-6">
-        </main>
+      <main className="container py-6">
+        <div className="mb-4">
+          <Pagination
+            onClickPageNum={page => getUniversities({ limit: 10, offset: (page - 1) * 10 })}
+          />
+        </div>
+        {
+          universities.map(university => <CardUniversity key={university.name} university={university} />)
+        }
+        <div className="mt-4">
+          <Pagination
+            onClickPageNum={page => getUniversities({ limit: 10, offset: (page - 1) * 10 })}
+          />
+        </div>
+      </main>
 
-        <Footer />
-      </div>
-    )
-  }
+      <Footer />
+    </div>
+  )
 }
