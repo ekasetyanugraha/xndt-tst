@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import UrlParamsUniversity from '../interfaces/url-params-university';
-import UniversityService from '../services/universities';
+import UrlParamsUniversity from 'interfaces/url-params-university';
+import UniversityService from 'services/universities';
 
 export default function useUniversity () {
   const [isLoading, setIsLoading] = useState(false);

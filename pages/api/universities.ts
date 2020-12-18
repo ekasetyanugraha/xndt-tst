@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import data from '../../data/world_universities_and_domain.json';
-import University from '../../interfaces/university';
+import data from 'data/world_universities_and_domain.json';
+import University from 'interfaces/university';
 import sleep from './sleep';
 
 const handleGet = (req: NextApiRequest, res: NextApiResponse) => {

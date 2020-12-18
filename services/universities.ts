@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios';
-import University from '../interfaces/university';
-import UrlParamsUniversity from '../interfaces/url-params-university';
+import University from 'interfaces/university';
+import UrlParamsUniversity from 'interfaces/url-params-university';
 import APIInstance from './api-instance';
 
 const API_PATH = '/universities';

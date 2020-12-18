@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import PageContainer from '../components/PageContainer';
-import Hero from '../components/Hero';
-import CardUniversity from '../components/CardUniversity';
-import Pagination from '../components/Pagination';
-import useUniversity from '../hooks/university';
+import PageContainer from 'components/PageContainer';
+import Hero from 'components/Hero';
+import CardUniversity from 'components/CardUniversity';
+import Pagination from 'components/Pagination';
+import useUniversity from 'hooks/university';
 
 export default function Home() {
   const {

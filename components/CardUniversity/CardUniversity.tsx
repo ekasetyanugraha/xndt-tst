@@ -1,5 +1,5 @@
 import getUnicodeFlagIcon from 'country-flag-icons/unicode'
-import University from '../../interfaces/university';
+import University from 'interfaces/university';
 
 interface Props {
   university: University;

@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import PageContainer from '../components/PageContainer';
-import FormSearch from '../components/FormSearch';
-import CardUniversity from '../components/CardUniversity';
-import Pagination from '../components/Pagination';
-import useUniversity from '../hooks/university';
+import PageContainer from 'components/PageContainer';
+import FormSearch from 'components/FormSearch';
+import CardUniversity from 'components/CardUniversity';
+import Pagination from 'components/Pagination';
+import useUniversity from 'hooks/university';
+import UrlParamsUniversity from 'interfaces/url-params-university';
 
 export default function Search() {
   const {

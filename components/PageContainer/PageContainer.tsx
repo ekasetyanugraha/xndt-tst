@@ -1,6 +1,6 @@
-import Head from '../Head';
-import Navbar from '../Navbar';
-import Footer from '../Footer';
+import Head from 'components/Head';
+import Navbar from 'components/Navbar';
+import Footer from 'components/Footer';
 
 export default function PageContainer(props) {
   return (
