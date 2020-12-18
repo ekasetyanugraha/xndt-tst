@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
-import Head from '../components/Head';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import PageContainer from '../components/PageContainer';
+import Hero from '../components/Hero';
 import CardUniversity from '../components/CardUniversity';
 import Pagination from '../components/Pagination';
 import useUniversity from '../hooks/university';
@@ -22,23 +21,8 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <Head />
-
-      <Navbar />
-
-      <section className="hero is-primary">
-        <div className="hero-body">
-          <div className="container">
-            <h1 className="title">
-              Global Universities
-            </h1>
-            <h2 className="subtitle">
-              Primary subtitle
-            </h2>
-          </div>
-        </div>
-      </section>
+    <PageContainer>
+      <Hero title="Global Universities" />
 
       {
         isLoading && <progress className="progress is-small is-primary is-radiusless" max="100"></progress>
@@ -60,7 +44,6 @@ export default function Home() {
         </div>
       </main>
 
-      <Footer />
-    </div>
+    </PageContainer>
   )
 }
