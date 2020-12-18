@@ -15,8 +15,8 @@ export default function Navbar() {
             Home
           </a>
 
-          <a className="navbar-item">
-            Documentation
+          <a href="/search" className="navbar-item">
+            Search
           </a>
 
           <a className="navbar-item">
