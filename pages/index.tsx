@@ -13,6 +13,10 @@ export default function Home() {
     getUniversities();
   }, []);
 
+  const onClickPageNum = (page) => {
+    getUniversities({ limit: 10, offset: (page - 1) * 10 })
+  };
+
   return (
     <div>
       <Head />
@@ -35,7 +39,7 @@ export default function Home() {
       <main className="container py-6">
         <div className="mb-4">
           <Pagination
-            onClickPageNum={page => getUniversities({ limit: 10, offset: (page - 1) * 10 })}
+            onClickPageNum={onClickPageNum}
           />
         </div>
         {
@@ -43,7 +47,7 @@ export default function Home() {
         }
         <div className="mt-4">
           <Pagination
-            onClickPageNum={page => getUniversities({ limit: 10, offset: (page - 1) * 10 })}
+            onClickPageNum={onClickPageNum}
           />
         </div>
       </main>
