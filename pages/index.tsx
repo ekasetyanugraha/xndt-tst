@@ -10,6 +10,7 @@ export default function Home() {
     isLoading,
     getUniversities,
     universities,
+    meta,
   } = useUniversity();
 
   useEffect(() => {
@@ -37,6 +38,9 @@ export default function Home() {
           !!universities.length &&
           <div className="mt-4">
             <Pagination
+              limit={meta.limit}
+              offset={meta.offset}
+              total={meta.total}
               onClickPageNum={onClickPageNum}
             />
           </div>

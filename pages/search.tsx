@@ -11,6 +11,7 @@ export default function Search() {
     isLoading,
     getUniversities,
     universities,
+    meta,
   } = useUniversity();
 
   const [submitted, setSubmitted] = useState(false);
@@ -51,6 +52,9 @@ export default function Search() {
           !!universities.length &&
           <div className="mt-4">
             <Pagination
+              limit={meta.limit}
+              offset={meta.offset}
+              total={meta.total}
               onClickPageNum={onClickPageNum}
             />
           </div>
