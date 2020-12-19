@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/ekasetyanugraha/xndt-tst.svg?style=svg)](https://circleci.com/gh/ekasetyanugraha/xndt-tst)
+[![codecov](https://codecov.io/gh/ekasetyanugraha/xndt-tst/branch/main/graph/badge.svg?token=NGBTOGWLOZ)](https://codecov.io/gh/ekasetyanugraha/xndt-tst)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
