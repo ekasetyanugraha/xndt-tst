@@ -13,18 +13,21 @@ const handleGet = (req: NextApiRequest, res: NextApiResponse) => {
   const numLimit = Number(limit);
   const numOffset = Number(offset);
 
-  const pageData: University[] =
+  const universitiesFiltered: University[] =
     data
       .filter(university => university.name.includes(name as string))
+
+  const responseData: University[] =
+    universitiesFiltered
       .slice(numOffset, numLimit + numOffset);
 
   res.status(200).json({
-    data: pageData,
+    data: responseData,
     meta: {
       status: 200,
       limit: numLimit,
       offset: numOffset,
-      total: pageData.length,
+      total: universitiesFiltered.length,
     },
   });
 };
