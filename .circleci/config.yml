@@ -17,6 +17,9 @@ jobs:
       - store_artifacts:
           path: coverage
   coverage:
+    executor:
+      name: node/default
+      tag: '12.13.0'
     steps:
       - codecov/upload:
           file: coverage
