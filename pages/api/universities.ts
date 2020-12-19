@@ -18,7 +18,15 @@ const handleGet = (req: NextApiRequest, res: NextApiResponse) => {
       .filter(university => university.name.includes(name as string))
       .slice(numOffset, numLimit + numOffset);
 
-  res.status(200).json(pageData);
+  res.status(200).json({
+    data: pageData,
+    meta: {
+      status: 200,
+      limit: numLimit,
+      offset: numOffset,
+      total: data.length,
+    },
+  });
 };
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
