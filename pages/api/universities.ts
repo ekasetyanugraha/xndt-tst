@@ -15,7 +15,7 @@ const handleGet = (req: NextApiRequest, res: NextApiResponse) => {
 
   const universitiesFiltered: University[] =
     data
-      .filter(university => university.name.includes(name as string))
+      .filter(university => university.name.toLowerCase().includes(name.toString().toLowerCase()))
 
   const responseData: University[] =
     universitiesFiltered
