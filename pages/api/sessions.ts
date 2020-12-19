@@ -1,4 +1,5 @@
 import { withIronSession } from 'next-iron-session';
+import { cookieConfig } from 'helpers/ssr-helper';
 
 const VALID_EMAIL = 'ekasetyanugraha@gmail.com';
 const VALID_PASSWORD = 'supersecretpassword';
@@ -19,11 +20,5 @@ export default withIronSession(
 
     return res.status(404).send('');
   },
-  {
-    cookieName: 'xndt_cookie',
-    cookieOptions: {
-      secure: process.env.NODE_ENV === 'production' ? true : false
-    },
-    password: process.env.APPLICATION_SECRET,
-  }
+  cookieConfig,
 );
