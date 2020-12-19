@@ -24,7 +24,7 @@ const handleGet = (req: NextApiRequest, res: NextApiResponse) => {
       status: 200,
       limit: numLimit,
       offset: numOffset,
-      total: data.length,
+      total: pageData.length,
     },
   });
 };
