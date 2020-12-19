@@ -16,15 +16,9 @@ jobs:
           command: yarn run test
       - store_artifacts:
           path: coverage
-  coverage:
-    executor:
-      name: node/default
-      tag: '12.13.0'
-    steps:
       - codecov/upload:
           file: coverage
 workflows:
   node-tests:
     jobs:
       - test
-      - coverage
