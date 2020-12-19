@@ -7,7 +7,7 @@ export default function PageContainer(props) {
     <div>
       <Head />
 
-      <Navbar />
+      <Navbar user={props.user} />
 
       {props.children}
 

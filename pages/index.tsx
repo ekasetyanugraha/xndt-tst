@@ -5,7 +5,9 @@ import CardUniversity from 'components/CardUniversity';
 import Pagination from 'components/Pagination';
 import useUniversity from 'hooks/university';
 
-export default function Home() {
+export { getServerSideProps } from 'helpers/ssr-helper';
+
+export default function Home({ user }) {
   const {
     isLoading,
     getUniversities,
@@ -18,7 +20,7 @@ export default function Home() {
   }, []);
 
   return (
-    <PageContainer>
+    <PageContainer user={user}>
       <Hero title="Global Universities" />
 
       {
