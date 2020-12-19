@@ -1,4 +1,12 @@
-export default function Navbar() {
+interface Props {
+  user?: {
+    email: string;
+  };
+};
+
+export default function Navbar({
+  user,
+}: Props) {
   return (
     <nav className="navbar box m-0" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
@@ -23,6 +31,27 @@ export default function Navbar() {
             Something
           </a>
         </div>
+
+        {
+          user ?
+          (
+            <div className="navbar-end">
+              <div className="navbar-item">
+                {user.email}
+              </div>
+            </div>
+          ) : (
+            <div className="navbar-end">
+              <div className="navbar-item">
+                <div className="buttons">
+                  <a href="/login" className="button is-primary">
+                    <strong>Login</strong>
+                  </a>
+                </div>
+              </div>
+            </div>
+          )
+        }
       </div>
     </nav>
   );
