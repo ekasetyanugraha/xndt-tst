@@ -21,10 +21,6 @@ export default function Search() {
     getUniversities(payload);
   };
 
-  const onClickPageNum = (page) => {
-    getUniversities({ limit: 10, offset: (page - 1) * 10 })
-  };
-
   return (
     <PageContainer>
       {
@@ -55,7 +51,7 @@ export default function Search() {
               limit={meta.limit}
               offset={meta.offset}
               total={meta.total}
-              onClickPageNum={onClickPageNum}
+              onChangePage={getUniversities}
             />
           </div>
         }

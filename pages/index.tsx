@@ -17,10 +17,6 @@ export default function Home() {
     getUniversities();
   }, []);
 
-  const onClickPageNum = (page) => {
-    getUniversities({ limit: 10, offset: (page - 1) * 10 })
-  };
-
   return (
     <PageContainer>
       <Hero title="Global Universities" />
@@ -41,7 +37,7 @@ export default function Home() {
               limit={meta.limit}
               offset={meta.offset}
               total={meta.total}
-              onClickPageNum={onClickPageNum}
+              onChangePage={getUniversities}
             />
           </div>
         }

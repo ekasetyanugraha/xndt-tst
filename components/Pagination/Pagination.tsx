@@ -1,17 +1,19 @@
+import UrlParamsUniversity from "interfaces/url-params-university";
+
 const DEFAULT_PAGES = 5;
 
 interface Props {
   limit?: number;
   offset?: number;
   total?: number;
-  onClickPageNum?: (page: number) => void;
+  onChangePage?: (page: UrlParamsUniversity) => void;
 }
 
 export default function Pagination({
   limit = 0,
   offset = 0,
   total = 0,
-  onClickPageNum = () => {},
+  onChangePage = () => {},
 }: Props) {
   const currentPage = (offset / limit) + 1;
   const totalPage = total && limit ? Math.ceil(total / limit) : 0;
@@ -20,12 +22,17 @@ export default function Pagination({
   const disablePrev = currentPage === 1;
   const disableNext = currentPage === totalPage;
 
+  const changePage = (page: number) => onChangePage({
+    limit,
+    offset: (page - 1) * limit,
+  });
+
   const onClickPrev = () => {
-    onClickPageNum(currentPage - 1);
+    changePage(currentPage - 1);
   };
 
   const onClickNext = () => {
-    onClickPageNum(currentPage + 1);
+    changePage(currentPage + 1);
   };
 
   return (
@@ -46,10 +53,10 @@ export default function Pagination({
             <li key={i}>
               <button
                 type="button"
-                className={`button pagination-link ${currentPage === i+1 && 'is-current'}`}
-                onClick={() => onClickPageNum(i+1)}
+                className={`button pagination-link ${currentPage === i + 1 && 'is-current'}`}
+                onClick={() => changePage(i + 1)}
               >
-                {i+1}
+                {i + 1}
               </button>
             </li>
           )
