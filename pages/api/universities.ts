@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import data from 'data/world_universities_and_domain.json';
 import University from 'interfaces/university';
-import sleep from './sleep';
 
 const handleGet = (req: NextApiRequest, res: NextApiResponse) => {
   const { query } = req;
@@ -33,8 +32,6 @@ const handleGet = (req: NextApiRequest, res: NextApiResponse) => {
 };
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  await sleep();
-
   switch (req.method) {
     case 'GET': handleGet(req, res);
     default: handleGet(req, res);
