@@ -1,4 +1,9 @@
 module.exports = {
+  collectCoverage: true,
+  collectCoverageFrom: [
+    '<rootDir>/**/*.tsx',
+    '!<rootDir>/pages/_app.tsx',
+  ],
   roots: ["<rootDir>"],
   transform: {
     "^.+\\.(ts|tsx)$": "babel-jest"
