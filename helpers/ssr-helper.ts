@@ -12,15 +12,9 @@ export const getServerSideProps = withIronSession(
   async ({ req }) => {
     const user = req.session.get('user');
 
-    if (!user) {
-      return {
-        props: {},
-      };
-    }
-
     return {
       props: {
-        user,
+        user: user || null,
       },
     };
   },
