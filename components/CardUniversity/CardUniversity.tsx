@@ -9,13 +9,13 @@ export default function CardUniversity({
   university,
 }: Props) {
   return (
-    <a className="card box" href={university.web_pages[0]} target="_blank">
+    <a className="card box" href={university.web_pages[0]} target="_blank" data-testid="card">
       <div className="card-content">
         <div className="media">
           <div className="media-content">
-            <p className="title is-4">{university.name}</p>
-            <p className="subtitle is-6">{getUnicodeFlagIcon(university.alpha_two_code)} {university.country}</p>
-            <span className="has-text-link">{university.web_pages[0]}</span>
+            <p className="title is-4" data-testid="name">{university.name}</p>
+            <p className="subtitle is-6" data-testid="country">{getUnicodeFlagIcon(university.alpha_two_code)} {university.country}</p>
+            <span className="has-text-link" data-testid="link">{university.web_pages[0]}</span>
           </div>
         </div>
       </div>
