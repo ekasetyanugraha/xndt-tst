@@ -7,7 +7,7 @@ describe('Component: FormLogin', () => {
   it('should render without onSubmit props', () => {
     render(<FormLogin />);
 
-    expect(screen.getByTestId('form')).toBeTruthy();
+    expect(screen.getByTestId('form-login')).toBeTruthy();
   });
 
   it('should submit form with proper payload', () => {

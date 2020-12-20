@@ -20,7 +20,7 @@ export default function FormLogin({ onSubmit = () => {} }: Props): JSX.Element {
   };
 
   return (
-    <form onSubmit={handleSubmit} data-testid="form">
+    <form onSubmit={handleSubmit} data-testid="form-login">
       <Field label="Email">
         <input type="text" className="input" ref={emailInput} data-testid="input-email" />
       </Field>
