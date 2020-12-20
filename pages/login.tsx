@@ -24,7 +24,7 @@ export const getServerSideProps = withIronSession(async ({ req, res }) => {
 }, cookieConfig);
 
 interface Props {
-  user: User;
+  user?: User;
 }
 
 export default function Login({ user }: Props): JSX.Element {
