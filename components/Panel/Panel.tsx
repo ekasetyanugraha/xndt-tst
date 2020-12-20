@@ -10,10 +10,10 @@ interface Props {
 
 export default function Panel({ color = 'primary', title, children }: Props): JSX.Element {
   return (
-    <div className={`panel is-${color}`}>
+    <div className={`panel is-${color}`} data-testid="panel">
       {title && <p className="panel-heading">{title}</p>}
 
-      <div className="p-4">{children}</div>
+      {children && <div className="p-4">{children}</div>}
     </div>
   );
 }

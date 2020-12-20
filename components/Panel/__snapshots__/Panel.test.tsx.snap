@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Panel should show children properly 1`] = `
+<div
+  class="panel is-primary"
+  data-testid="panel"
+>
+  <p
+    class="panel-heading"
+  >
+    Test Panel Title
+  </p>
+  <div
+    class="p-4"
+  >
+    <p>
+      Test Children
+    </p>
+  </div>
+</div>
+`;

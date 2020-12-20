@@ -7,9 +7,9 @@ interface Props {
 
 export default function Field({ label, children }: Props): JSX.Element {
   return (
-    <div className="field">
+    <div className="field" data-testid="field">
       {label && <label className="label">{label}</label>}
-      <div className="control">{children}</div>
+      {children && <div className="control">{children}</div>}
     </div>
   );
 }

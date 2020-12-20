@@ -1,9 +1,8 @@
+import { User } from 'interfaces/user';
 import React from 'react';
 
 interface Props {
-  user?: {
-    email: string;
-  };
+  user?: User;
 }
 
 export default function Navbar({ user }: Props): JSX.Element {
@@ -44,7 +43,7 @@ export default function Navbar({ user }: Props): JSX.Element {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a href="/login" className="button is-primary">
+                <a href="/login" className="button is-primary" data-testid="btn-login">
                   <strong>Login</strong>
                 </a>
               </div>
