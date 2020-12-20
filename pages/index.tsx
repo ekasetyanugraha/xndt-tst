@@ -12,7 +12,7 @@ interface Props {
   user?: User;
 }
 
-export default function Home({ user }: Props): JSX.Element {
+export default function Index({ user }: Props): JSX.Element {
   const { isLoading, getUniversities, universities, meta } = useUniversity();
 
   useEffect(() => {

@@ -8,7 +8,13 @@ interface Props {
 
 export default function CardUniversity({ university }: Props): JSX.Element {
   return (
-    <a className="card box" href={university.web_pages[0]} target="_blank" rel="noreferrer" data-testid="card">
+    <a
+      className="card box"
+      href={university.web_pages[0]}
+      target="_blank"
+      rel="noreferrer"
+      data-testid="card-university"
+    >
       <div className="card-content">
         <div className="media">
           <div className="media-content">
