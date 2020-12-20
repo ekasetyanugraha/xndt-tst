@@ -21,11 +21,11 @@ export default function FormLogin({ onSubmit = () => {} }: Props): JSX.Element {
 
   return (
     <form onSubmit={handleSubmit} data-testid="form-login">
-      <Field label="Email">
+      <Field label="Email" help="We currently only have 1 user with this email: ekasetyanugraha@gmail.com">
         <input type="text" className="input" ref={emailInput} data-testid="input-email" />
       </Field>
 
-      <Field label="Password">
+      <Field label="Password" help="Psst.. it's supersecretpassword">
         <input type="password" className="input" ref={passwordInput} data-testid="input-password" />
       </Field>
 
