@@ -23,6 +23,9 @@ export default function Navbar({ user }: Props): JSX.Element {
           <a href="/" className="navbar-item">
             Home
           </a>
+          <a href="/countries" className="navbar-item">
+            Best By Countries
+          </a>
         </div>
 
         {user ? (
