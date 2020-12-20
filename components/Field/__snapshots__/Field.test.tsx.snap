@@ -17,6 +17,11 @@ exports[`Component: Field should render properly 1`] = `
       Test
     </p>
   </div>
+  <p
+    class="help"
+  >
+    Test Help
+  </p>
 </div>
 `;
 

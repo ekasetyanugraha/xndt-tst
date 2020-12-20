@@ -11,7 +11,7 @@ describe('Component: Field', () => {
 
   it('should render properly', () => {
     render(
-      <Field label="Test Label">
+      <Field label="Test Label" help="Test Help">
         <p>Test</p>
       </Field>,
     );
