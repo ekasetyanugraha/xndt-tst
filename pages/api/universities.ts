@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import data from 'data/world_universities_and_domain.json';
 import University from 'interfaces/university';
 
-const handleGet = (req: NextApiRequest, res: NextApiResponse) => {
+const handleGet = (req: NextApiRequest, res: NextApiResponse): void => {
   const { query } = req;
   const { limit = 10, offset = 0, name = '' } = query;
   const numLimit = Number(limit);
@@ -25,7 +25,7 @@ const handleGet = (req: NextApiRequest, res: NextApiResponse) => {
   });
 };
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default (req: NextApiRequest, res: NextApiResponse): void => {
   switch (req.method) {
     case 'GET':
       handleGet(req, res);
