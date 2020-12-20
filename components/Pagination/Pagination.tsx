@@ -40,17 +40,19 @@ export default function Pagination({ limit = 0, offset = 0, total = 0, onChangeP
         title="This is the first page"
         disabled={disablePrev}
         onClick={onClickPrev}
+        data-testid="button-previous"
       >
         Previous
       </button>
 
       <ul className="pagination-list">
-        {[...Array(totalPageLimited)].map((page, i) => (
+        {[...Array(totalPageLimited)].map((item, i) => (
           <li key={i}>
             <button
               type="button"
               className={`button pagination-link ${currentPage === i + 1 && 'is-current'}`}
               onClick={() => changePage(i + 1)}
+              data-testid="button-page"
             >
               {i + 1}
             </button>
@@ -58,7 +60,13 @@ export default function Pagination({ limit = 0, offset = 0, total = 0, onChangeP
         ))}
       </ul>
 
-      <button type="button" className="button pagination-next" disabled={disableNext} onClick={onClickNext}>
+      <button
+        type="button"
+        className="button pagination-next"
+        disabled={disableNext}
+        onClick={onClickNext}
+        data-testid="button-next"
+      >
         Next page
       </button>
     </nav>

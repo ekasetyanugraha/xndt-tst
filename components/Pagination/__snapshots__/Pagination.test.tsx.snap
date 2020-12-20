@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Pagination without props should match snapshot 1`] = `
+<nav
+  aria-label="pagination"
+  class="pagination is-centered"
+  role="navigation"
+>
+  <button
+    class="button pagination-previous"
+    data-testid="button-previous"
+    title="This is the first page"
+    type="button"
+  >
+    Previous
+  </button>
+  <ul
+    class="pagination-list"
+  />
+  <button
+    class="button pagination-next"
+    data-testid="button-next"
+    type="button"
+  >
+    Next page
+  </button>
+</nav>
+`;
