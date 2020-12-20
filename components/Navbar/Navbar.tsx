@@ -8,20 +8,6 @@ interface Props {
 export default function Navbar({ user }: Props): JSX.Element {
   return (
     <nav className="navbar box m-0" role="navigation" aria-label="main navigation">
-      <div className="navbar-brand">
-        <a
-          role="button"
-          className="navbar-burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
       <div className="navbar-menu container">
         <div className="navbar-start">
           <a href="/" className="navbar-item">
