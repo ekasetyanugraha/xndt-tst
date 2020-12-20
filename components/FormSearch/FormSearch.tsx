@@ -12,7 +12,7 @@ export default function FormSearch({ onSubmit = () => {} }: Props): JSX.Element 
     e.preventDefault();
 
     onSubmit({
-      name: searchInput.current.value,
+      name: searchInput.current.value.trim() || null,
     });
   };
 
