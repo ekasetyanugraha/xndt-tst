@@ -9,6 +9,9 @@ module.exports = {
   transform: {
     "^.+\\.(ts|tsx)$": "babel-jest"
   },
+  setupFiles: [
+    "<rootDir>/jest.setup.js",
+  ],
   setupFilesAfterEnv: [
     "@testing-library/jest-dom/extend-expect"
   ],
