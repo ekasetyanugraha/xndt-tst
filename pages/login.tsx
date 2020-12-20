@@ -41,9 +41,13 @@ export default function Login({ user }: Props): JSX.Element {
   return (
     <PageContainer user={user}>
       <main className="container py-6">
-        <Panel title="Welcome to UniversityDB">
-          <FormLogin onSubmit={onSubmitFormLogin} />
-        </Panel>
+        <div className="columns">
+          <div className="column is-4 is-offset-4">
+            <Panel title="Welcome to UniversityDB">
+              <FormLogin onSubmit={onSubmitFormLogin} />
+            </Panel>
+          </div>
+        </div>
       </main>
     </PageContainer>
   );
