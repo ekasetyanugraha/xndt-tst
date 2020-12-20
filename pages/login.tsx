@@ -1,10 +1,12 @@
+import React from 'react';
 import { useRouter } from 'next/router';
 import { withIronSession } from 'next-iron-session';
+import { User } from 'interfaces/user';
+import { cookieConfig } from 'helpers/ssr-helper';
 import PageContainer from 'components/PageContainer';
 import Panel from 'components/Panel';
 import FormLogin from 'components/FormLogin';
 import sessionService from 'services/session';
-import { cookieConfig } from 'helpers/ssr-helper';
 
 export const getServerSideProps = withIronSession(async ({ req, res }) => {
   const user = req.session.get('user');
@@ -21,10 +23,8 @@ export const getServerSideProps = withIronSession(async ({ req, res }) => {
   };
 }, cookieConfig);
 
-import React from 'react';
-
 interface Props {
-  user: any;
+  user: User;
 }
 
 export default function Login({ user }: Props): JSX.Element {
