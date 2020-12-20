@@ -17,7 +17,12 @@ export default function Navbar({ user }: Props): JSX.Element {
 
         {user ? (
           <div className="navbar-end">
-            <div className="navbar-item">{user.email}</div>
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link">{user.email}</a>
+              <div className="navbar-dropdown is-right">
+                <a className="navbar-item">Logout</a>
+              </div>
+            </div>
           </div>
         ) : (
           <div className="navbar-end">
