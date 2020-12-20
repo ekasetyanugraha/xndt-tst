@@ -26,7 +26,17 @@ const mockGetUniversitiesSuccessResponse = {
 };
 mockGetUniversities.mockResolvedValue(mockGetUniversitiesSuccessResponse);
 
+afterEach(() => {
+  jest.clearAllMocks();
+});
+
 describe('Page: PageContainer', () => {
+  beforeEach(() => {
+    waitFor(() => {
+      render(<PageIndex />);
+    });
+  });
+
   it('should call getUniversities API', () => {
     waitFor(() => {
       expect(mockGetUniversities).toHaveBeenCalled();
@@ -34,28 +44,24 @@ describe('Page: PageContainer', () => {
   });
 
   it('should have Navbar', async () => {
-    render(<PageIndex />);
     const navigation = await screen.findByRole('navigation');
 
     expect(navigation).toBeTruthy();
   });
 
   it('should have Footer', async () => {
-    render(<PageIndex />);
     const footer = await screen.findByTestId('footer');
 
     expect(footer).toBeTruthy();
   });
 
   it('should have CardUniversity', async () => {
-    render(<PageIndex />);
     const cards = await screen.findAllByTestId('card-university');
 
     expect(cards).toHaveLength(mockGetUniversitiesSuccessResponse.data.length);
   });
 
   it('should have pagination', async () => {
-    render(<PageIndex />);
     const pagination = await screen.findByLabelText('pagination');
 
     expect(pagination).toBeTruthy();
