@@ -1,11 +1,16 @@
 import { useRef } from 'react';
+import { PayloadInterface } from 'interfaces/payload-session';
 import Field from 'components/Field';
+
+interface Props {
+  onSubmit: (payload: PayloadInterface) => void
+}
 
 export default function FormLogin({
   onSubmit,
-}) {
-  const emailInput = useRef();
-  const passwordInput = useRef();
+}: Props) {
+  const emailInput = useRef<HTMLInputElement>();
+  const passwordInput = useRef<HTMLInputElement>();
 
   const handleSubmit = (e) => {
     e.preventDefault();
