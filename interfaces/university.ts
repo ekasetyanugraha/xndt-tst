@@ -5,4 +5,4 @@ export default interface University {
   name: string;
   'state-province'?: string;
   web_pages: string[];
-};
+}

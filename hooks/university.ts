@@ -4,7 +4,7 @@ import University from 'interfaces/university';
 import UrlParamsUniversity from 'interfaces/url-params-university';
 import UniversityService from 'services/universities';
 
-export default function useUniversity () {
+export default function useUniversity() {
   const [params, setParams] = useState({} as UrlParamsUniversity);
   const [meta, setMeta] = useState({} as ApiResponseMetaPaginated);
   const [isLoading, setIsLoading] = useState(false);
@@ -38,4 +38,4 @@ export default function useUniversity () {
     setUniversities,
     getUniversities,
   };
-};
+}

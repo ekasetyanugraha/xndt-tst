@@ -10,4 +10,4 @@ export interface ResponseGetUniversitiesMeta {
 export interface ResponseGetUniversities {
   data: University[];
   meta: ResponseGetUniversitiesMeta;
-};
+}
