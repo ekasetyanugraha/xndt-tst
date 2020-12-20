@@ -5,11 +5,10 @@ import APIInstance from './api-instance';
 
 const API_PATH = '/universities';
 
-export const getUniversities =
-  (params: UrlParamsUniversity = {}): Promise<ResponseGetUniversities> =>
-    APIInstance.get(`${API_PATH}`, {
-      params,
-    }).then((response: AxiosResponse<ResponseGetUniversities>) => response.data);
+export const getUniversities = (params: UrlParamsUniversity = {}): Promise<ResponseGetUniversities> =>
+  APIInstance.get(`${API_PATH}`, {
+    params,
+  }).then((response: AxiosResponse<ResponseGetUniversities>) => response.data);
 
 export default {
   getUniversities,
