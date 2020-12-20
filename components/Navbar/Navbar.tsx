@@ -27,12 +27,6 @@ export default function Navbar({ user }: Props): JSX.Element {
           <a href="/" className="navbar-item">
             Home
           </a>
-
-          <a href="/search" className="navbar-item">
-            Search
-          </a>
-
-          <a className="navbar-item">Something</a>
         </div>
 
         {user ? (
