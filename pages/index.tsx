@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { User } from 'interfaces/user';
 import PageContainer from 'components/PageContainer';
 import Hero from 'components/Hero';
 import CardUniversity from 'components/CardUniversity';
@@ -7,13 +8,12 @@ import useUniversity from 'hooks/university';
 
 export { getServerSideProps } from 'helpers/ssr-helper';
 
-export default function Home({ user }) {
-  const {
-    isLoading,
-    getUniversities,
-    universities,
-    meta,
-  } = useUniversity();
+interface Props {
+  user?: User;
+}
+
+export default function Home({ user }: Props): JSX.Element {
+  const { isLoading, getUniversities, universities, meta } = useUniversity();
 
   useEffect(() => {
     getUniversities();
@@ -23,28 +23,19 @@ export default function Home({ user }) {
     <PageContainer user={user}>
       <Hero title="Global Universities" />
 
-      {
-        isLoading && <progress className="progress is-small is-primary is-radiusless" max="100"></progress>
-      }
+      {isLoading && <progress className="progress is-small is-primary is-radiusless" max="100"></progress>}
 
       <main className="container py-6">
-        {
-          universities.map(university => <CardUniversity key={university.name} university={university} />)
-        }
+        {universities.map((university) => (
+          <CardUniversity key={university.name} university={university} />
+        ))}
 
-        {
-          !!universities.length &&
+        {!!universities.length && (
           <div className="mt-4">
-            <Pagination
-              limit={meta.limit}
-              offset={meta.offset}
-              total={meta.total}
-              onChangePage={getUniversities}
-            />
+            <Pagination limit={meta.limit} offset={meta.offset} total={meta.total} onChangePage={getUniversities} />
           </div>
-        }
+        )}
       </main>
-
     </PageContainer>
-  )
+  );
 }

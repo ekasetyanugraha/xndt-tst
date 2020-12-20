@@ -1,5 +1,7 @@
-import 'styles/globals.css'
+import React from 'react';
+import 'styles/globals.css';
 
-export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+// eslint-disable-next-line react/prop-types
+export default function MyApp({ Component, pageProps }): JSX.Element {
+  return <Component {...pageProps} />;
 }

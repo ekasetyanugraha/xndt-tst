@@ -1,14 +1,12 @@
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { PayloadInterface } from 'interfaces/payload-session';
 import Field from 'components/Field';
 
 interface Props {
-  onSubmit: (payload: PayloadInterface) => void
+  onSubmit: (payload: PayloadInterface) => void;
 }
 
-export default function FormLogin({
-  onSubmit,
-}: Props) {
+export default function FormLogin({ onSubmit }: Props): JSX.Element {
   const emailInput = useRef<HTMLInputElement>();
   const passwordInput = useRef<HTMLInputElement>();
 
@@ -19,7 +17,7 @@ export default function FormLogin({
     const password = passwordInput.current.value;
 
     onSubmit({ email, password });
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -31,7 +29,9 @@ export default function FormLogin({
         <input type="password" className="input" ref={passwordInput} />
       </Field>
 
-      <button type="submit" className="button is-primary is-fullwidth">Login</button>
+      <button type="submit" className="button is-primary is-fullwidth">
+        Login
+      </button>
     </form>
-  )
+  );
 }

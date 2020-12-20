@@ -6,28 +6,31 @@ import FormLogin from 'components/FormLogin';
 import sessionService from 'services/session';
 import { cookieConfig } from 'helpers/ssr-helper';
 
-export const getServerSideProps = withIronSession(
-  async ({ req, res }) => {
-    const user = req.session.get('user');
+export const getServerSideProps = withIronSession(async ({ req, res }) => {
+  const user = req.session.get('user');
 
-    if (user) {
-      res.writeHead(301, {
-        Location: '/',
-      });
-      res.end();
-    }
+  if (user) {
+    res.writeHead(301, {
+      Location: '/',
+    });
+    res.end();
+  }
 
-    return {
-      props: {},
-    };
-  },
-  cookieConfig,
-);
+  return {
+    props: {},
+  };
+}, cookieConfig);
 
-export default function Login( { user }) {
+import React from 'react';
+
+interface Props {
+  user: any;
+}
+
+export default function Login({ user }: Props): JSX.Element {
   const router = useRouter();
 
-  const onSubmitFormLogin = async payload => {
+  const onSubmitFormLogin = async (payload) => {
     const response = await sessionService.login(payload);
 
     if (response) {
@@ -44,4 +47,4 @@ export default function Login( { user }) {
       </main>
     </PageContainer>
   );
-};
+}
